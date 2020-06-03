@@ -84,7 +84,7 @@ class IP(Classe_do_IP):
         return valido
 
 
-ip = IP('127.0.0.1')
+ip = IP('127.255.255.255')
 
 if(ip.contaPontos()):
 
@@ -94,4 +94,7 @@ if(ip.contaPontos()):
             
             if(ip.verificaNumeros(octetos)):
                 print('É um ip')
-                ip.olaMundo(octetos)
+                classe_do_ip = ip.tipoClasse(octetos)
+
+
+print(classe_do_ip)
