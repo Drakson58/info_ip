@@ -3,7 +3,7 @@ import socket
 cliente = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 host = ''
-porta = 9980
+porta = 9981
 cliente.connect((host, porta)) # Se conecantando ao servidor.
 
 while True:

@@ -83,18 +83,7 @@ class IP(Classe_do_IP):
 
         return valido
 
-
-ip = IP('127.255.255.255')
-
-if(ip.contaPontos()):
-
-    octetos = ip.separaOctetos()
-    if(ip.verificaCampos(octetos)):
-        if(ip.verificaOctetos(octetos)):
-            
-            if(ip.verificaNumeros(octetos)):
-                print('É um ip')
-                classe_do_ip = ip.tipoClasse(octetos)
+    def ola(self):
+        print('Ola, mundo')
 
 
-print(classe_do_ip)
