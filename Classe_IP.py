@@ -1,4 +1,3 @@
-# len 12 sem pontos 15 com
 
 class IP:
 
@@ -13,6 +12,9 @@ class IP:
     def _setIP(self, novo_ip):
         self._ip = novo_ip
         
+    def _getValidado(self):
+        return self.__validado
+
 
     def contaPontos(self):
         if(self._ip.count('.') != 3):
@@ -48,14 +50,49 @@ class IP:
 
 
     def verificaOctetos(self, octetos):
-        print(octetos)
+        if(octetos[0].isdigit()):
+            if(octetos[1].isdigit()):
+                if(octetos[2].isdigit()):
+                    if(octetos[3].isdigit()):
+                        valido = True 
+                    else:
+                        valido = False
+                else:
+                    valido = False
+            else:
+                valido = False
+        else: 
+            valido = False
 
-ip = IP('115.221.999.626')
+        return valido
+
+
+    def verificaNumeros(self, octetos):
+        if(int(octetos[0]) < 256):
+            if(int(octetos[1]) < 256):
+                if(int(octetos[2]) < 256):
+                    if(int(octetos[3]) < 256):
+                        valido = True 
+                    else:
+                        valido = False
+                else:
+                    valido = False
+            else:
+                valido = False
+        else: 
+            valido = False
+
+        return valido
+
+
+ip = IP('127.0.0.1')
 print(ip._getIP())
 
 if(ip.contaPontos()):
-    
-    octetos = ip.separaOctetos()
 
+    octetos = ip.separaOctetos()
     if(ip.verificaCampos(octetos)):
-        ip.verificaOctetos(octetos)
+        if(ip.verificaOctetos(octetos)):
+            if(ip.verificaNumeros(octetos)):
+                print('É um ip')
+                
