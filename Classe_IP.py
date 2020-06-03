@@ -83,7 +83,4 @@ class IP(Classe_do_IP):
 
         return valido
 
-    def ola(self):
-        print('Ola, mundo')
-
 

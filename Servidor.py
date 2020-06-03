@@ -5,7 +5,7 @@ from Classe_IP import IP
 servidor = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 host = ''
-porta = 9981
+porta = 9989
 servidor.bind((host, porta))
 servidor.listen(5)
 
@@ -14,7 +14,7 @@ while True:
 
     
     conexaoCliente, ipCliente = servidor.accept()
-
+    print('Conectado com o IP:', ipCliente)
     while True:
 
         # Recebendo msg do cliente
@@ -39,6 +39,24 @@ while True:
                             # Enviando msg pro cliente
                             msg = dado.encode('ascii')
                             conexaoCliente.send(msg)
+                        else:
+                            dado = 'Erro! Tente novamente.'
+                    else:
+                        dado = 'Erro! Tente novamente.'
+                else:
+                    dado = 'Erro! Tente novamente.'
+            else:
+                dado = 'Erro! Tente novamente.'
+
+            if(dado == 'Erro! Tente novamente.'):
+                # Enviando msg pro cliente
+                msg = dado.encode('ascii')
+                conexaoCliente.send(msg)
+                            
+
+
+                            
+
     
     
         

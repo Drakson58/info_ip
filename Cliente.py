@@ -3,8 +3,14 @@ import socket
 cliente = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 host = ''
-porta = 9981
+porta = 9989
 cliente.connect((host, porta)) # Se conecantando ao servidor.
+
+print('*** BEM VINDO ***')
+print('_________________')
+print('Digite um IP para saber sua classe ou 0 para fechar a conexão.')
+print('')
+print('')
 
 while True:
 
