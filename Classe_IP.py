@@ -1,5 +1,5 @@
-
-class IP:
+from Classe_TipoDoIp import Classe_do_IP
+class IP(Classe_do_IP):
 
 
     def __init__(self, ip):
@@ -19,7 +19,6 @@ class IP:
     def contaPontos(self):
         if(self._ip.count('.') != 3):
             #print('Ip invalido')
-            valido = False
             return False
         else:
             return True
@@ -86,13 +85,13 @@ class IP:
 
 
 ip = IP('127.0.0.1')
-print(ip._getIP())
 
 if(ip.contaPontos()):
 
     octetos = ip.separaOctetos()
     if(ip.verificaCampos(octetos)):
         if(ip.verificaOctetos(octetos)):
+            
             if(ip.verificaNumeros(octetos)):
                 print('É um ip')
-                
+                ip.olaMundo(octetos)
